@@ -1,7 +1,7 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = 'Aleksandre'; // укажите здесь ваше имя
+$user_name = 'Aleksandr'; // укажите здесь ваше имя
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -92,14 +92,11 @@ $user_name = 'Aleksandre'; // укажите здесь ваше имя
                     "url" => "img/lot-6.jpg",
                 ]
                 ];
-            $index = 0;
-            $num = count($category);
-            while ($index < $num): ?>
+            foreach ($category as $val): ?>
                 <li class="promo__item promo__item--boards">
-                    <a class="promo__link" href="pages/all-lots.html"><?=$category[$index];?></a>
+                    <a class="promo__link" href="pages/all-lots.html"><?=$val;?></a>
                 </li>
-                    <?php $index++; ?>
-            <?php endwhile; ?>
+            <?php endforeach; ?>
 <!--            ?>
 
             <li class="promo__item promo__item--boards">
@@ -112,7 +109,7 @@ $user_name = 'Aleksandre'; // укажите здесь ваше имя
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
-        <?php foreach ($category_list as $key => $val): ?>
+        <?php foreach ($category_list as $val): ?>
             <!--заполните этот список из массива с товарами-->
             <li class="lots__item lot">
                 <div class="lot__image">
@@ -143,14 +140,11 @@ $user_name = 'Aleksandre'; // укажите здесь ваше имя
         <ul class="nav__list container">
             <!--заполните этот список из массива категорий-->
             <?php
-            $index = 0;
-            $num = count($category);
-            while ($index < $num): ?>
+            foreach ($category as $val): ?>
             <li class="nav__item">
-                <a href="pages/all-lots.html"><?=$category[$index];?></a>
+                <a href="pages/all-lots.html"><?=$val;?></a>
             </li>
-            <?php $index++; ?>
-            <?php endwhile; ?>
+            <?php endforeach; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
