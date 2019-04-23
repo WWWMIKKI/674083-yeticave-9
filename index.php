@@ -97,11 +97,6 @@ $user_name = 'Aleksandr'; // укажите здесь ваше имя
                     <a class="promo__link" href="pages/all-lots.html"><?=$val;?></a>
                 </li>
             <?php endforeach; ?>
-<!--            ?>
-
-            <li class="promo__item promo__item--boards">
-                <a class="promo__link" href="pages/all-lots.html">Имя категории</a>
-            </li> -->
         </ul>
     </section>
     <section class="lots">
