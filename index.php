@@ -1,7 +1,7 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = 'Aleksandr'; // укажите здесь ваше имя
+$user_name = 'Aleksandre'; // укажите здесь ваше имя
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -105,6 +105,16 @@ $user_name = 'Aleksandr'; // укажите здесь ваше имя
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
+<?php function lotprice($index_price) {
+                $ceil_price = ceil($index_price);
+                if ($ceil_price >= "1000") {
+                $final_price = number_format($ceil_price, 0, ',', ' ');
+            }
+                $final_price .=" &#8381;";
+        return $final_price;
+        }
+        ?>
+
         <?php foreach ($category_list as $val): ?>
             <!--заполните этот список из массива с товарами-->
             <li class="lots__item lot">
@@ -117,7 +127,7 @@ $user_name = 'Aleksandr'; // укажите здесь ваше имя
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount"><?=$val['price']; ?></span>
-                            <span class="lot__cost">цена<b class="rub">р</b></span>
+                            <span class="lot__cost"><?=lotprice($val['price']); ?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
