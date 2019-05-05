@@ -1,9 +1,7 @@
 <?php
 $is_auth = rand(0, 1);
-
 $user_name = 'Aleksandr'; // укажите здесь ваше имя
-?>
-<?php function lotprice($index_price) {
+function lotprice($index_price) {
 $ceil_price = ceil($index_price);
 if ($ceil_price >= "1000") {
 $final_price = number_format($ceil_price, 0, ',', ' ');
