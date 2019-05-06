@@ -1,8 +1,16 @@
 <?php
 $is_auth = rand(0, 1);
-
 $user_name = 'Aleksandr'; // укажите здесь ваше имя
+function lotprice($index_price) {
+$ceil_price = ceil($index_price);
+if ($ceil_price >= "1000") {
+$final_price = number_format($ceil_price, 0, ',', ' ');
+}
+$final_price .=" &#8381;";
+return $final_price;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -117,7 +125,7 @@ $user_name = 'Aleksandr'; // укажите здесь ваше имя
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount"><?=$val['price']; ?></span>
-                            <span class="lot__cost">цена<b class="rub">р</b></span>
+                            <span class="lot__cost"><?=lotprice($val['price']); ?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
